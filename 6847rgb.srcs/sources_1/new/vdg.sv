@@ -44,10 +44,10 @@ module vdg(
     bit [4:0] sm4_data;
     bit [2:0] palette;
     bit [7:0] graphic_data;
-    int vcounter;
-    int hcounter;
-    int displayrow;
-    int displaycol;
+    shortint vcounter;
+    shortint hcounter;
+    shortint displayrow;
+    shortint displaycol;
     bit vs;
     bit hs;
     bit nextrow;
@@ -64,6 +64,12 @@ module vdg(
     bit [3:0] char_row;
     bit [7:0] char_data;
     bit sync_high;
+    bit clk1;
+    bit clk2;
+    
+    bit [7:0] alphared;
+    bit [7:0] alphagreen;
+    bit [7:0] alphablue;
     
     typedef enum {
         LL1, LL2, LS3, SS4, SS5,
@@ -174,6 +180,8 @@ module vdg(
         clkdiv = CLK4;
         char_row = 0;
         sync_high = 0;
+        clk1 = 0;
+        clk2 = 0;
     end
 
 // VCLK expected to operate at 3.579545MHz
@@ -183,15 +191,19 @@ module vdg(
 
 // active on positive and negative vclk edge
     always @(posedge vclk) begin
-        hcounter <= hcounter + 1;
-        if (row == DS)
-            displaycol <= displaycol + 1;
+        clk1 = !clk1;
     end
     
     always @(negedge vclk) begin
-        hcounter <= hcounter + 1;
-        if (row == DS)
+        clk2 = !clk2;
+    end
+    
+    always @(clk1, clk2) begin
+        hcounter <= (hcounter + 1) % (allcols + 1);
+        if (row == DS && hcounter != 0)
             displaycol <= displaycol + 1;
+        else
+            displaycol <= 0;
     end
     
     always @(ieb, asb, agb, gm) begin
@@ -246,8 +258,11 @@ module vdg(
         end
     end
     
-    always @(posedge preload) begin
-        da0 = a0;
+    always @(preload, nextrow) begin
+        if (nextrow)
+            da0 = 1;
+        else
+            da0 = a0;
         a0 = !a0;
     end
     
@@ -271,22 +286,24 @@ module vdg(
     end
     
     always @(semi4_code) begin
-        graphic_data = sm4_data;
-        palette[2:0] = data[6:4];
+        if (mode == SEMI4) begin
+            graphic_data = sm4_data;
+            palette[2:0] = data[6:4];
+        end
     end
     
     always @(semi6_code) begin
-        graphic_data = sm6_data;
-        palette[2] = 0;
-        palette[1:0] = data[7:6];
+        if (mode == SEMI6) begin
+            graphic_data = sm6_data;
+            palette[2] = 0;
+            palette[1:0] = data[7:6];
+        end
     end
         
     always @(hcounter) begin
-        if (hcounter > allcols) begin
+        if (hcounter == allcols) begin
             vcounter = vcounter + 1;
             displayrow = displayrow + 1;
-            hcounter = 0;
-            displaycol = 0;
             nextrow = 1;
             if (vcounter > toprows && vcounter <= (toprows + activerows))
                 char_row = (char_row + 1) % 12;
@@ -304,8 +321,6 @@ module vdg(
         end
         
         if (nextrow) begin
-            a0 = 0;
-            da0 = 1;
             nextrow = 0;
             unique case(state)
                 SS17: begin
@@ -505,11 +520,6 @@ module vdg(
                                 palette[2] = 0;
                                 palette[1:0] = bit_data[1:0];
                             end
-                            default: begin
-                                red = hcounter % 256;
-                                green = vcounter % 256;
-                                blue = (hcounter + vcounter) % 256;
-                            end
                         endcase
                     end else begin
                         palette = 0;
@@ -519,6 +529,9 @@ module vdg(
                 end
             end
         endcase
+    end
+    
+    always @(hcounter, vcounter) begin
     end
     
     always @(vs) begin

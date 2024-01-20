@@ -6,4 +6,4 @@ C:/Users/jimbr/fpga/6847rgb/6847rgb.sim/sim_1/behav/xsim/glbl.v,1697210495,veril
 C:/Users/jimbr/fpga/6847rgb/6847rgb.srcs/sim_1/new/tb.sv,1705694084,systemVerilog,,,,tb,,uvm,,,,,,
 C:/Users/jimbr/fpga/6847rgb/6847rgb.srcs/sources_1/new/palette.sv,1705764831,systemVerilog,,C:/Users/jimbr/fpga/6847rgb/6847rgb.srcs/sources_1/new/text_rom.sv,,palette,,uvm,,,,,,
 C:/Users/jimbr/fpga/6847rgb/6847rgb.srcs/sources_1/new/text_rom.sv,1705745200,systemVerilog,,C:/Users/jimbr/fpga/6847rgb/6847rgb.srcs/sources_1/new/vdg.sv,,text_rom,,uvm,,,,,,
-C:/Users/jimbr/fpga/6847rgb/6847rgb.srcs/sources_1/new/vdg.sv,1705765215,systemVerilog,,C:/Users/jimbr/fpga/6847rgb/6847rgb.srcs/sim_1/new/tb.sv,,vdg,,uvm,,,,,,
+C:/Users/jimbr/fpga/6847rgb/6847rgb.srcs/sources_1/new/vdg.sv,1705784833,systemVerilog,,C:/Users/jimbr/fpga/6847rgb/6847rgb.srcs/sim_1/new/tb.sv,,vdg,,uvm,,,,,,
