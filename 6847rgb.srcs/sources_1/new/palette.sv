@@ -30,13 +30,21 @@ module palette(
     input bit v_sync,
     input bit h_sync,
     input bit sync_high,
-    output bit [7:0] RED,
-    output bit [7:0] GREEN,
-    output bit [7:0] BLUE
+    output bit [3:0] red,
+    output bit [3:0] green,
+    output bit [3:0] blue
     );
+    
+    bit [7:0] RED;
+    bit [7:0] GREEN;
+    bit [7:0] BLUE;
     
     bit [1:0] bitsPerPixel;
     int set;
+    
+    assign red[3:0] = RED[7:4];
+    assign green[3:0] = GREEN[7:4];
+    assign blue[3:0] = BLUE[7:4];
     
     always @(clock) begin
         if (h_sync)

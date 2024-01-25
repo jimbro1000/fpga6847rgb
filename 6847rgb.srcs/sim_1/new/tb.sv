@@ -21,22 +21,25 @@
 
 
 module tb;
-    logic vclk;
-    logic da0;
-    logic hsb;
-    logic fsb;
-    logic rp;
-    logic msb;
     logic [7:0] data;
+    logic vclk;
     logic css; 
     logic ieb; 
     logic asb; 
     logic agb;
     logic inv;
     logic [2:0] gm;
-    logic [7:0] red;
-    logic [7:0] green;
-    logic [7:0] blue;
+    logic da0;
+    logic hsb;
+    logic fsb;
+    logic msb;
+    logic rp;
+    logic [3:0] red;
+    logic [3:0] green;
+    logic [3:0] blue;
+    logic vhs;
+    logic vfs;
+    
     int show_mode;
     // 0, 1, 2, 3, 4, 5, 6, 7, alpha
     int char;

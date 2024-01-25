@@ -70,7 +70,6 @@ proc create_report { reportName command } {
   }
 }
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 4
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7a100tcsg324-1
 
@@ -86,6 +85,9 @@ set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
+  C:/Users/jimbr/fpga/6847rgb/6847rgb.srcs/sources_1/new/external_semigraphics.sv
+  C:/Users/jimbr/fpga/6847rgb/6847rgb.srcs/sources_1/new/external_text_rom.sv
+  C:/Users/jimbr/fpga/6847rgb/6847rgb.srcs/sources_1/new/internal_semigraphics.sv
   C:/Users/jimbr/fpga/6847rgb/6847rgb.srcs/sources_1/new/palette.sv
   C:/Users/jimbr/fpga/6847rgb/6847rgb.srcs/sources_1/new/text_rom.sv
   C:/Users/jimbr/fpga/6847rgb/6847rgb.srcs/sources_1/new/vdg.sv
