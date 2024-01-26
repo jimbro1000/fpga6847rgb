@@ -50,9 +50,9 @@ module vdg(
     
     bit [7:0] sm6_data;
     bit [7:0] sm4_data;
-    bit [2:0] assert_palette;
+    bit [4:0] assert_palette;
     bit [7:0] graphic_data;
-    bit [2:0] display_palette;
+    bit [4:0] display_palette;
     bit [7:0] register_select_a;
     bit [7:0] register_data_a;
     bit [7:0] register_select_b;
@@ -182,6 +182,7 @@ module vdg(
         .v_sync (vs),
         .h_sync (hs),
         .sync_high (sync_high),
+        .double (1'b0),
         .red (red),
         .green (green),
         .blue (blue)
@@ -544,9 +545,9 @@ module vdg(
                                 bit_data = 0;
                                 bit_data[0] = graphic_data[7];
                                 graphic_data = graphic_data << 1;
-                                display_palette = { 2'b00, bit_data[0] };
+                                display_palette = { 3'b000, bit_data[0] };
                             end else
-                                display_palette = 3'b000;
+                                display_palette = 4'b0000;
                         end
                         SEMIG4: begin
                             if (ds_state == ACTIVE) begin
@@ -555,16 +556,16 @@ module vdg(
                                 graphic_data = graphic_data << 1;
                                 display_palette = semi_data[6:4];
                             end else
-                                display_palette = 3'b000;
+                                display_palette = 4'b0000;
                         end
                         SEMIG6: begin
                             if (ds_state == ACTIVE) begin
                                 bit_data = 0;
                                 bit_data[0] = graphic_data[7];
                                 graphic_data = graphic_data << 1;
-                                display_palette = { 1'b0, semi_data[7:6] };
+                                display_palette = { 2'b00, semi_data[7:6] };
                             end else
-                                display_palette = 3'b000;
+                                display_palette = 4'b0000;
                         end
                         MONOGRAPHIC: begin
                             if (ds_state == ACTIVE) begin
@@ -573,9 +574,9 @@ module vdg(
                                     bit_data[0] = graphic_data[7];
                                     graphic_data = graphic_data << 1;
                                 end
-                                display_palette = { 2'b00, bit_data[0] };
+                                display_palette = { 3'b000, bit_data[0] };
                             end else
-                                display_palette = 3'b000;
+                                display_palette = 4'b0000;
                         end
                         COLOURGRAPHIC: begin
                             if (ds_state == ACTIVE) begin
@@ -585,152 +586,152 @@ module vdg(
                                     bit_data[0] = graphic_data[6];
                                     graphic_data = graphic_data << 2;
                                 end
-                                display_palette = { 1'b0, bit_data[1:0] };
+                                display_palette = { 2'b00, bit_data[1:0] };
                             end else
-                                display_palette = 3'b000;
+                                display_palette = 4'b0000;
                         end
                     endcase
                     
-                    unique case (mode)
-                        ALPHA: begin
-                            if (ds_state == ACTIVE) begin
-                                bit_data = 0;
-                                bit_data[0] = graphic_data[7];
-                                graphic_data = graphic_data << 1;
-                                display_palette = { 2'b00, bit_data[0] };
-                            end else
-                                display_palette = 3'b000;
-                        end
-                        INVALPHA: begin
-                            if (ds_state == ACTIVE) begin
-                                bit_data = 0;
-                                bit_data[0] = graphic_data[7];
-                                graphic_data = graphic_data << 1;
-                                display_palette = { 2'b00, bit_data[0] };
-                            end else
-                                display_palette = 3'b000;
-                        end
-                        EXTALPHA: begin
-                            if (ds_state == ACTIVE) begin
-                                bit_data = 0;
-                                bit_data[0] = graphic_data[7];
-                                graphic_data = graphic_data << 1;
-                                display_palette = { 2'b00, bit_data[0] };
-                            end else
-                                display_palette = 3'b000;
-                        end
-                        INVEXTALPHA: begin
-                            if (ds_state == ACTIVE) begin
-                                bit_data = 0;
-                                bit_data[0] = graphic_data[7];
-                                graphic_data = graphic_data << 1;
-                                display_palette = { 2'b00, bit_data[0] };
-                            end else
-                                display_palette = 3'b000;
-                        end
-                        SEMI4: begin
-                            if (ds_state == ACTIVE) begin
-                                bit_data = 0;
-                                bit_data[0] = graphic_data[7];
-                                graphic_data = graphic_data << 1;
-                                display_palette = semi_data[6:4];
-                            end else
-                                display_palette = 3'b000;
-                        end
-                        SEMI6: begin
-                            if (ds_state == ACTIVE) begin
-                                bit_data = 0;
-                                bit_data[0] = graphic_data[7];
-                                graphic_data = graphic_data << 1;
-                                display_palette = { 1'b0, semi_data[7:6] };
-                            end else
-                                display_palette = 3'b000;
-                        end
-                        GRAPHIC7: begin
+//                    unique case (mode)
+//                        ALPHA: begin
 //                            if (ds_state == ACTIVE) begin
 //                                bit_data = 0;
 //                                bit_data[0] = graphic_data[7];
 //                                graphic_data = graphic_data << 1;
-//                                display_palette = { 2'b00, bit_data[0] };
+//                                display_palette = { 3'b000, bit_data[0] };
 //                            end else
-//                                display_palette = 3'b000;
-                        end
-                        GRAPHIC6: begin
+//                                display_palette = 4'b0000;
+//                        end
+//                        INVALPHA: begin
 //                            if (ds_state == ACTIVE) begin
 //                                bit_data = 0;
-//                                bit_data[1] = graphic_data[7];
-//                                bit_data[0] = graphic_data[6];
-//                                graphic_data = graphic_data << 2;
-//                                display_palette = { 1'b0, bit_data[1:0] };
+//                                bit_data[0] = graphic_data[7];
+//                                graphic_data = graphic_data << 1;
+//                                display_palette = { 3'b000, bit_data[0] };
 //                            end else
-//                                display_palette = 3'b000;
-                        end
-                        GRAPHIC5: begin
-//                            if (ds_state == ACTIVE) begin
-//                                if (vclk) begin
-//                                    bit_data = 0;
-//                                    bit_data[0] = graphic_data[7];
-//                                    graphic_data = graphic_data << 1;
-//                                end
-//                                display_palette = { 2'b00, bit_data[0] };
-//                            end else
-//                                display_palette = 3'b000;
-                        end
-                        GRAPHIC4: begin
+//                                display_palette = 4'b0000;
+//                        end
+//                        EXTALPHA: begin
 //                            if (ds_state == ACTIVE) begin
 //                                bit_data = 0;
-//                                bit_data[1] = graphic_data[7];
-//                                bit_data[0] = graphic_data[6];
-//                                graphic_data = graphic_data << 2;
-//                                display_palette = { 1'b0, bit_data[1:0] };
+//                                bit_data[0] = graphic_data[7];
+//                                graphic_data = graphic_data << 1;
+//                                display_palette = { 3'b000, bit_data[0] };
 //                            end else
-//                                display_palette = 3'b000;
-                        end
-                        GRAPHIC3: begin
-//                            if (ds_state == ACTIVE) begin
-//                                if (vclk) begin
-//                                    bit_data = 0;
-//                                    bit_data[0] = graphic_data[7];
-//                                    graphic_data = graphic_data << 1;
-//                                end
-//                                display_palette = { 2'b00, bit_data[0] };
-//                            end else
-//                                display_palette = 3'b000;
-                        end
-                        GRAPHIC2: begin
+//                                display_palette = 4'b0000;
+//                        end
+//                        INVEXTALPHA: begin
 //                            if (ds_state == ACTIVE) begin
 //                                bit_data = 0;
-//                                bit_data[1] = graphic_data[7];
-//                                bit_data[0] = graphic_data[6];
-//                                graphic_data = graphic_data << 2;
-//                                display_palette = { 1'b0, bit_data[1:0] };
+//                                bit_data[0] = graphic_data[7];
+//                                graphic_data = graphic_data << 1;
+//                                display_palette = { 3'b000, bit_data[0] };
 //                            end else
-//                                display_palette = 3'b000;
-                        end
-                        GRAPHIC1: begin
+//                                display_palette = 4'b0000;
+//                        end
+//                        SEMI4: begin
 //                            if (ds_state == ACTIVE) begin
-//                                if (vclk) begin
-//                                    bit_data = 0;
-//                                    bit_data[0] = graphic_data[7];
-//                                    graphic_data = graphic_data << 1;
-//                                end
-//                                display_palette = { 2'b00, bit_data[0] };
+//                                bit_data = 0;
+//                                bit_data[0] = graphic_data[7];
+//                                graphic_data = graphic_data << 1;
+//                                display_palette = { 1'b0, semi_data[6:4] };
 //                            end else
-//                                display_palette = 3'b000;
-                        end
-                        GRAPHIC0: begin
+//                                display_palette = 4'b000;
+//                        end
+//                        SEMI6: begin
 //                            if (ds_state == ACTIVE) begin
-//                                if (vclk) begin
-//                                    bit_data = 0;
-//                                    bit_data[1] = graphic_data[7];
-//                                    bit_data[0] = graphic_data[6];
-//                                    graphic_data = graphic_data << 2;
-//                                end
-//                                display_palette = { 1'b0, bit_data[1:0] };
+//                                bit_data = 0;
+//                                bit_data[0] = graphic_data[7];
+//                                graphic_data = graphic_data << 1;
+//                                display_palette = { 2'b00, semi_data[7:6] };
 //                            end else
-//                                display_palette = 3'b000;
-                        end
-                    endcase
+//                                display_palette = 4'b0000;
+//                        end
+//                        GRAPHIC7: begin
+////                            if (ds_state == ACTIVE) begin
+////                                bit_data = 0;
+////                                bit_data[0] = graphic_data[7];
+////                                graphic_data = graphic_data << 1;
+////                                display_palette = { 2'b00, bit_data[0] };
+////                            end else
+////                                display_palette = 3'b000;
+//                        end
+//                        GRAPHIC6: begin
+////                            if (ds_state == ACTIVE) begin
+////                                bit_data = 0;
+////                                bit_data[1] = graphic_data[7];
+////                                bit_data[0] = graphic_data[6];
+////                                graphic_data = graphic_data << 2;
+////                                display_palette = { 1'b0, bit_data[1:0] };
+////                            end else
+////                                display_palette = 3'b000;
+//                        end
+//                        GRAPHIC5: begin
+////                            if (ds_state == ACTIVE) begin
+////                                if (vclk) begin
+////                                    bit_data = 0;
+////                                    bit_data[0] = graphic_data[7];
+////                                    graphic_data = graphic_data << 1;
+////                                end
+////                                display_palette = { 2'b00, bit_data[0] };
+////                            end else
+////                                display_palette = 3'b000;
+//                        end
+//                        GRAPHIC4: begin
+////                            if (ds_state == ACTIVE) begin
+////                                bit_data = 0;
+////                                bit_data[1] = graphic_data[7];
+////                                bit_data[0] = graphic_data[6];
+////                                graphic_data = graphic_data << 2;
+////                                display_palette = { 1'b0, bit_data[1:0] };
+////                            end else
+////                                display_palette = 3'b000;
+//                        end
+//                        GRAPHIC3: begin
+////                            if (ds_state == ACTIVE) begin
+////                                if (vclk) begin
+////                                    bit_data = 0;
+////                                    bit_data[0] = graphic_data[7];
+////                                    graphic_data = graphic_data << 1;
+////                                end
+////                                display_palette = { 2'b00, bit_data[0] };
+////                            end else
+////                                display_palette = 3'b000;
+//                        end
+//                        GRAPHIC2: begin
+////                            if (ds_state == ACTIVE) begin
+////                                bit_data = 0;
+////                                bit_data[1] = graphic_data[7];
+////                                bit_data[0] = graphic_data[6];
+////                                graphic_data = graphic_data << 2;
+////                                display_palette = { 1'b0, bit_data[1:0] };
+////                            end else
+////                                display_palette = 3'b000;
+//                        end
+//                        GRAPHIC1: begin
+////                            if (ds_state == ACTIVE) begin
+////                                if (vclk) begin
+////                                    bit_data = 0;
+////                                    bit_data[0] = graphic_data[7];
+////                                    graphic_data = graphic_data << 1;
+////                                end
+////                                display_palette = { 2'b00, bit_data[0] };
+////                            end else
+////                                display_palette = 3'b000;
+//                        end
+//                        GRAPHIC0: begin
+////                            if (ds_state == ACTIVE) begin
+////                                if (vclk) begin
+////                                    bit_data = 0;
+////                                    bit_data[1] = graphic_data[7];
+////                                    bit_data[0] = graphic_data[6];
+////                                    graphic_data = graphic_data << 2;
+////                                end
+////                                display_palette = { 1'b0, bit_data[1:0] };
+////                            end else
+////                                display_palette = 3'b000;
+//                        end
+//                    endcase
                 end else begin
                     sync_high = (hcounter >= hzeropulse);
                 end
