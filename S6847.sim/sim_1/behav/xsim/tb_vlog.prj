@@ -1,0 +1,15 @@
+# compile verilog/system verilog design source files
+sv xil_defaultlib  \
+"../../../../S6847.srcs/sources_1/new/external_semigraphics.sv" \
+"../../../../S6847.srcs/sources_1/new/external_text_rom.sv" \
+"../../../../S6847.srcs/sources_1/new/internal_semigraphics.sv" \
+"../../../../S6847.srcs/sources_1/new/palette.sv" \
+"../../../../S6847.srcs/sources_1/new/text_rom.sv" \
+"../../../../S6847.srcs/sources_1/new/vdg.sv" \
+"../../../../S6847.srcs/sim_1/new/tb.sv" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort
