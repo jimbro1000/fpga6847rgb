@@ -1,4 +1,5 @@
 `timescale 1ns / 1ps
+
 //////////////////////////////////////////////////////////////////////////////////
 // Company: 
 // Engineer: 
@@ -41,16 +42,22 @@ module vdg(
     output logic vhs,
     output logic vfs
     );
+
+    `include "syncrow.sv"
+    `include "display_mode.sv"
+    `include "display_behaviour.sv"
+    `include "display_model.sv"
+    `include "sync.sv"
     
     bit [7:0] sm6_data;
     bit [7:0] sm4_data;
     bit [4:0] assert_palette;
     bit [7:0] graphic_data;
     bit [4:0] display_palette;
-    bit [7:0] register_select_a;
-    bit [7:0] register_data_a;
-    bit [7:0] register_select_b;
-    bit [7:0] register_data_b;
+//    bit [7:0] register_select_a;
+//    bit [7:0] register_data_a;
+//    bit [7:0] register_select_b;
+//    bit [7:0] register_data_b;
     shortint vcounter;
     shortint hcounter;
     shortint displayrow;
@@ -78,62 +85,9 @@ module vdg(
     bit reset_vertical;
     bit reset_display;
     
-    bit [7:0] alphared;
-    bit [7:0] alphagreen;
-    bit [7:0] alphablue;
-    
-    typedef enum bit [4:0] {
-        LL1 = 0, 
-        LL2 = 1, 
-        LS3 = 2, 
-        SS4 = 3, 
-        SS5 = 4,
-        DS6 = 5,
-        SS7 = 6, 
-        SS8 = 7, 
-        SL9 = 8, 
-        LL10 = 9, 
-        LL11 = 10,
-        SS12 = 11, 
-        SS13 = 12,
-        DS14 = 13,
-        SS15 = 14, 
-        SS16 = 15, 
-        SS17 = 16
-    } sync;
-    
-    typedef enum {
-        LL, LS, SL, SS, DS
-    } syncrow;
-    
-    typedef enum {
-        LEFT, RIGHT, TOP, BOTTOM, ACTIVE, SYNC
-    } display_model;
-    
-    typedef enum logic [3:0] {
-        ALPHA = 4'b0000,
-        INVALPHA = 4'b0001,
-        EXTALPHA = 4'b0010,
-        INVEXTALPHA = 4'b0011,
-        SEMI4 = 4'b0100,
-        SEMI6 = 4'b0101,
-        GRAPHIC0 = 4'b1000,
-        GRAPHIC1 = 4'b1001,
-        GRAPHIC2 = 4'b1010,
-        GRAPHIC3 = 4'b1011,
-        GRAPHIC4 = 4'b1100,
-        GRAPHIC5 = 4'b1101,
-        GRAPHIC6 = 4'b1110,
-        GRAPHIC7 = 4'b1111
-    } display_mode;
-    
-   typedef enum logic [2:0] {
-        TEXT = 3'b000,
-        SEMIG4 = 3'b010,
-        SEMIG6 = 3'b011,
-        MONOGRAPHIC = 3'b100,
-        COLOURGRAPHIC= 3'b101
-    } display_behaviour;
+//    bit [7:0] alphared;
+//    bit [7:0] alphagreen;
+//    bit [7:0] alphablue;
     
     sync state;
     syncrow row;
@@ -203,6 +157,24 @@ module vdg(
         .char_code (char_code)
     );
     
+    pixel_generator pixels
+    (
+        .vclk (vclk),
+        .row (row),
+        .behaviour (behaviour),
+        .mode (mode),
+        .display_state (ds_state),
+        .counter (hcounter),
+        .dataload (dataload),
+        .char_data (char_data),
+        .ext_char_data (ext_char_data),
+        .semi4_data (sm4_data),
+        .semi6_data (sm6_data),
+        .data (data),
+        .display_palette (display_palette),
+        .bit_data ()
+    );
+    
     parameter int toprows = 60;
     parameter int activerows = 192;
     parameter int allrows = 308;
@@ -255,7 +227,6 @@ module vdg(
         rp = 0;
         vs = 0;
         hs = 0;
-//        state = LL1;
         row = LL;
         displayrow = 0;
         displaycol = 0;
@@ -410,78 +381,6 @@ module vdg(
                         else
                             ds_state = ACTIVE;
                     end
-                    
-                    if (dataload) begin
-                        unique case (mode)
-                            ALPHA:
-                                graphic_data = char_data;
-                            INVALPHA:
-                                graphic_data = char_data;
-                            EXTALPHA:
-                                graphic_data = ext_char_data;
-                            INVEXTALPHA:
-                                graphic_data = ext_char_data;
-                            SEMI4:
-                                graphic_data = sm4_data;
-                            SEMI6:
-                                graphic_data = sm6_data;
-                            default:
-                                graphic_data = data;
-                        endcase 
-                    end
-                    
-                    unique case (behaviour)
-                        TEXT: begin
-                            if (ds_state == ACTIVE) begin
-                                bit_data = 0;
-                                bit_data[0] = graphic_data[7];
-                                graphic_data = graphic_data << 1;
-                                display_palette = { 3'b000, bit_data[0] };
-                            end else
-                                display_palette = 4'b0000;
-                        end
-                        SEMIG4: begin
-                            if (ds_state == ACTIVE) begin
-                                bit_data = 0;
-                                bit_data[0] = graphic_data[7];
-                                graphic_data = graphic_data << 1;
-                                display_palette = { 1'b0, semi_data[2:0] };
-                            end else
-                                display_palette = 4'b0000;
-                        end
-                        SEMIG6: begin
-                            if (ds_state == ACTIVE) begin
-                                bit_data = 0;
-                                bit_data[0] = graphic_data[7];
-                                graphic_data = graphic_data << 1;
-                                display_palette = { 2'b00, semi_data[3:2] };
-                            end else
-                                display_palette = 4'b0000;
-                        end
-                        MONOGRAPHIC: begin
-                            if (ds_state == ACTIVE) begin
-                                if (mode == GRAPHIC7 || vclk) begin
-                                    bit_data = 0;
-                                    bit_data[0] = graphic_data[7];
-                                    graphic_data = graphic_data << 1;
-                                end
-                                display_palette = { 3'b000, bit_data[0] };
-                            end else
-                                display_palette = 4'b0000;
-                        end
-                        default begin
-                            if (ds_state == ACTIVE) begin
-                                if (mode != GRAPHIC0 || vclk) begin
-                                    bit_data = 0;
-                                    bit_data[1] = graphic_data[7];
-                                    bit_data[0] = graphic_data[6];
-                                    graphic_data = graphic_data << 2;
-                                end
-                                display_palette = { 2'b00, bit_data[1:0] };
-                            end else
-                                display_palette = 4'b0000;
-                        end
-                    endcase
                 end else begin
                     sync_high = (hcounter >= hzeropulse);
                 end
