@@ -1,4 +1,4 @@
-typedef enum logic [3:0] {
+typedef enum bit [3:0] {
     ALPHA = 4'b0000,
     INVALPHA = 4'b0001,
     EXTALPHA = 4'b0010,

@@ -56,8 +56,7 @@ if {$::dispatch::connected} {
 }
 
 OPTRACE "synth_1" START { ROLLUP_AUTO }
-set_param chipscope.maxJobs 4
-set_param synth.incrementalSynthesisCache C:/Users/julia/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-11112-Omega/incrSyn
+set_param synth.incrementalSynthesisCache C:/Users/julia/AppData/Roaming/Xilinx/Vivado/.Xil/Vivado-19792-Omega/incrSyn
 set_param checkpoint.writeSynthRtdsInDcp 1
 set_msg_config -id {Synth 8-256} -limit 10000
 set_msg_config -id {Synth 8-638} -limit 10000
@@ -73,15 +72,22 @@ set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
 set_property ip_output_repo d:/Vivado/S6847/S6847.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
+set_property include_dirs D:/Vivado/S6847/S6847.srcs/sources_1/new [current_fileset]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
 read_verilog -library xil_defaultlib -sv {
+  D:/Vivado/S6847/S6847.srcs/sources_1/new/display_behaviour.sv
+  D:/Vivado/S6847/S6847.srcs/sources_1/new/display_mode.sv
   D:/Vivado/S6847/S6847.srcs/sources_1/new/data_behaviour.sv
+  D:/Vivado/S6847/S6847.srcs/sources_1/new/sync.sv
+  D:/Vivado/S6847/S6847.srcs/sources_1/new/syncrow.sv
   D:/Vivado/S6847/S6847.srcs/sources_1/new/display_state.sv
   D:/Vivado/S6847/S6847.srcs/sources_1/new/external_semigraphics.sv
   D:/Vivado/S6847/S6847.srcs/sources_1/new/external_text_rom.sv
   D:/Vivado/S6847/S6847.srcs/sources_1/new/internal_semigraphics.sv
   D:/Vivado/S6847/S6847.srcs/sources_1/new/palette.sv
+  D:/Vivado/S6847/S6847.srcs/sources_1/new/display_model.sv
+  D:/Vivado/S6847/S6847.srcs/sources_1/new/pixel_generator.sv
   D:/Vivado/S6847/S6847.srcs/sources_1/new/text_rom.sv
   D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv
 }

@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2024 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2024.2 (win64) Build 5239630 Fri Nov 08 22:35:27 MST 2024
-| Date         : Sun Jan 19 17:47:07 2025
+| Date         : Wed Jan 22 20:57:13 2025
 | Host         : Omega running 64-bit major release  (build 9200)
 | Command      : report_utilization -file vdg_utilization_synth.rpt -pb vdg_utilization_synth.pb
 | Design       : vdg
@@ -152,13 +152,13 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +----------+------+---------------------+
 | Ref Name | Used | Functional Category |
 +----------+------+---------------------+
-| LUT6     |  298 |                 LUT |
+| LUT6     |  308 |                 LUT |
 | CARRY4   |   93 |          CarryLogic |
 | LUT3     |   90 |                 LUT |
-| LUT5     |   77 |                 LUT |
-| LUT1     |   66 |                 LUT |
-| LUT2     |   50 |                 LUT |
-| LUT4     |   36 |                 LUT |
+| LUT5     |   78 |                 LUT |
+| LUT1     |   61 |                 LUT |
+| LUT2     |   46 |                 LUT |
+| LUT4     |   35 |                 LUT |
 | OBUF     |   19 |                  IO |
 | LDCE     |   19 |        Flop & Latch |
 | FDRE     |    9 |        Flop & Latch |

@@ -1,14 +1,45 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7a15tfgg484-3" LaunchTime="1737308767" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/vdg.dcp">
+<GenRun Id="synth_1" LaunchPart="xc7a15tfgg484-3" LaunchTime="1737579376" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/vdg.dcp">
+  <File Type="PA-TCL" Name="vdg.tcl"/>
   <File Type="REPORTS-TCL" Name="vdg_reports.tcl"/>
+  <File Type="RDS-RDS" Name="vdg.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="vdg_drc_synth.rpt"/>
   <File Type="RDS-UTIL" Name="vdg_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="vdg_utilization_synth.pb"/>
-  <File Type="PA-TCL" Name="vdg.tcl"/>
-  <File Type="RDS-RDS" Name="vdg.vds"/>
   <File Type="RDS-DCP" Name="vdg.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="vdg_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="vdg_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
+    <File Path="$PSRCDIR/sources_1/new/display_behaviour.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/display_mode.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/new/data_behaviour.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/sync.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/syncrow.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -44,6 +75,20 @@
       </FileInfo>
     </File>
     <File Path="$PSRCDIR/sources_1/new/palette.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/display_model.sv">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/pixel_generator.sv">
       <FileInfo>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -89,6 +134,7 @@
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="UsedInSteps" Val="synth_1_copy_1"/>
         <Attr Name="AutoDcp" Val="1"/>
       </FileInfo>
     </File>

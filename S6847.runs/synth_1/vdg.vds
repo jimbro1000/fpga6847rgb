@@ -3,8 +3,8 @@
 # SW Build 5239630 on Fri Nov 08 22:35:27 MST 2024
 # IP Build 5239520 on Sun Nov 10 16:12:51 MST 2024
 # SharedData Build 5239561 on Fri Nov 08 14:39:27 MST 2024
-# Start of session at: Sun Jan 19 17:46:12 2025
-# Process ID         : 30412
+# Start of session at: Wed Jan 22 20:56:21 2025
+# Process ID         : 23748
 # Current directory  : D:/Vivado/S6847/S6847.runs/synth_1
 # Command line       : vivado.exe -log vdg.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source vdg.tcl
 # Log file           : D:/Vivado/S6847/S6847.runs/synth_1/vdg.vds
@@ -19,7 +19,7 @@
 # Host memory        : 68639 MB
 # Swap memory        : 4294 MB
 # Total Virtual      : 72934 MB
-# Available Virtual  : 51334 MB
+# Available Virtual  : 58012 MB
 #-----------------------------------------------------------
 source vdg.tcl -notrace
 Command: read_checkpoint -auto_incremental -incremental D:/Vivado/S6847/S6847.srcs/utils_1/imports/synth_1/vdg.dcp
@@ -34,9 +34,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 18904
+INFO: [Synth 8-7075] Helper process launched with PID 19420
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:07 . Memory (MB): peak = 1049.988 ; gain = 467.145
+Starting RTL Elaboration : Time (s): cpu = 00:00:06 ; elapsed = 00:00:07 . Memory (MB): peak = 1050.273 ; gain = 468.625
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-10604] concatenation with an unsized literal will be treated as 32 bits [D:/Vivado/S6847/S6847.srcs/sources_1/new/external_semigraphics.sv:36]
 WARNING: [Synth 8-10604] concatenation with an unsized literal will be treated as 32 bits [D:/Vivado/S6847/S6847.srcs/sources_1/new/external_semigraphics.sv:37]
@@ -139,7 +139,7 @@ WARNING: [Synth 8-10604] concatenation with an unsized literal will be treated a
 WARNING: [Synth 8-10604] concatenation with an unsized literal will be treated as 32 bits [D:/Vivado/S6847/S6847.srcs/sources_1/new/external_semigraphics.sv:134]
 WARNING: [Synth 8-10604] concatenation with an unsized literal will be treated as 32 bits [D:/Vivado/S6847/S6847.srcs/sources_1/new/external_semigraphics.sv:135]
 INFO: [Common 17-14] Message 'Synth 8-10604' appears 100 times and further instances of the messages will be disabled. Use the Tcl command set_msg_config to change the current settings.
-INFO: [Synth 8-6157] synthesizing module 'vdg' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:23]
+INFO: [Synth 8-6157] synthesizing module 'vdg' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:24]
 INFO: [Synth 8-6157] synthesizing module 'text_rom' [D:/Vivado/S6847/S6847.srcs/sources_1/new/text_rom.sv:22]
 INFO: [Synth 8-155] case statement is not full and has no default [D:/Vivado/S6847/S6847.srcs/sources_1/new/text_rom.sv:37]
 INFO: [Synth 8-6155] done synthesizing module 'text_rom' (0#1) [D:/Vivado/S6847/S6847.srcs/sources_1/new/text_rom.sv:22]
@@ -268,57 +268,153 @@ WARNING: [Synth 8-567] referenced signal 'css' should be on the sensitivity list
 WARNING: [Synth 8-567] referenced signal 'palette_code' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/palette.sv:50]
 WARNING: [Synth 8-567] referenced signal 'semi_data' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/palette.sv:50]
 INFO: [Synth 8-6155] done synthesizing module 'palette' (0#1) [D:/Vivado/S6847/S6847.srcs/sources_1/new/palette.sv:22]
-WARNING: [Synth 8-689] width (5) of port connection 'palette_code' does not match port width (4) of module 'palette' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:180]
+WARNING: [Synth 8-689] width (5) of port connection 'palette_code' does not match port width (4) of module 'palette' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:134]
 INFO: [Synth 8-6157] synthesizing module 'data_behaviour' [D:/Vivado/S6847/S6847.srcs/sources_1/new/data_behaviour.sv:22]
-INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Vivado/S6847/S6847.srcs/sources_1/new/data_behaviour.sv:73]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Vivado/S6847/S6847.srcs/sources_1/new/data_behaviour.sv:51]
 INFO: [Synth 8-6155] done synthesizing module 'data_behaviour' (0#1) [D:/Vivado/S6847/S6847.srcs/sources_1/new/data_behaviour.sv:22]
+INFO: [Synth 8-6157] synthesizing module 'pixel_generator' [D:/Vivado/S6847/S6847.srcs/sources_1/new/pixel_generator.sv:22]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Vivado/S6847/S6847.srcs/sources_1/new/pixel_generator.sv:49]
+WARNING: [Synth 8-567] referenced signal 'mode' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/pixel_generator.sv:47]
+WARNING: [Synth 8-567] referenced signal 'char_data' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/pixel_generator.sv:47]
+WARNING: [Synth 8-567] referenced signal 'ext_char_data' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/pixel_generator.sv:47]
+WARNING: [Synth 8-567] referenced signal 'semi4_data' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/pixel_generator.sv:47]
+WARNING: [Synth 8-567] referenced signal 'semi6_data' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/pixel_generator.sv:47]
+WARNING: [Synth 8-567] referenced signal 'data' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/pixel_generator.sv:47]
+WARNING: [Synth 8-567] referenced signal 'row' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/pixel_generator.sv:47]
+INFO: [Synth 8-6155] done synthesizing module 'pixel_generator' (0#1) [D:/Vivado/S6847/S6847.srcs/sources_1/new/pixel_generator.sv:22]
+WARNING: [Synth 8-689] width (32) of port connection 'row' does not match port width (1) of module 'pixel_generator' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:163]
+WARNING: [Synth 8-689] width (16) of port connection 'counter' does not match port width (32) of module 'pixel_generator' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:167]
+WARNING: [Synth 8-689] width (5) of port connection 'display_palette' does not match port width (4) of module 'pixel_generator' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:174]
 INFO: [Synth 8-6157] synthesizing module 'display_state' [D:/Vivado/S6847/S6847.srcs/sources_1/new/display_state.sv:25]
-INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Vivado/S6847/S6847.srcs/sources_1/new/display_state.sv:68]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Vivado/S6847/S6847.srcs/sources_1/new/display_state.sv:47]
 INFO: [Synth 8-6155] done synthesizing module 'display_state' (0#1) [D:/Vivado/S6847/S6847.srcs/sources_1/new/display_state.sv:25]
-WARNING: [Synth 8-689] width (32) of port connection 'row' does not match port width (3) of module 'display_state' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:224]
-WARNING: [Synth 8-567] referenced signal 'row' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:285]
-WARNING: [Synth 8-567] referenced signal 'displaycol' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:285]
-INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:299]
-WARNING: [Synth 8-567] referenced signal 'inv' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:297]
-INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:480]
-INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:513]
-INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:531]
-WARNING: [Synth 8-567] referenced signal 'row' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:363]
-WARNING: [Synth 8-567] referenced signal 'vs' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:363]
-WARNING: [Synth 8-567] referenced signal 'clkdiv' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:363]
-WARNING: [Synth 8-567] referenced signal 'hs' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:363]
-WARNING: [Synth 8-567] referenced signal 'displaycol' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:363]
-WARNING: [Synth 8-567] referenced signal 'mode' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:363]
-WARNING: [Synth 8-567] referenced signal 'char_data' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:363]
-WARNING: [Synth 8-567] referenced signal 'ext_char_data' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:363]
-WARNING: [Synth 8-567] referenced signal 'sm4_data' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:363]
-WARNING: [Synth 8-567] referenced signal 'sm6_data' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:363]
-WARNING: [Synth 8-567] referenced signal 'data' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:363]
-WARNING: [Synth 8-567] referenced signal 'behaviour' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:363]
-WARNING: [Synth 8-567] referenced signal 'semi_data' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:363]
-WARNING: [Synth 8-567] referenced signal 'vclk' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:363]
-INFO: [Synth 8-6155] done synthesizing module 'vdg' (0#1) [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:23]
-WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/Vivado/S6847/S6847.srcs/sources_1/new/data_behaviour.sv:62]
-WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/Vivado/S6847/S6847.srcs/sources_1/new/display_state.sv:68]
-WARNING: [Synth 8-6014] Unused sequential element delta_state_reg was removed.  [D:/Vivado/S6847/S6847.srcs/sources_1/new/display_state.sv:167]
-WARNING: [Synth 8-6014] Unused sequential element clk1_reg was removed.  [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:278]
-WARNING: [Synth 8-6014] Unused sequential element clk2_reg was removed.  [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:282]
+WARNING: [Synth 8-689] width (32) of port connection 'row' does not match port width (3) of module 'display_state' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:196]
+WARNING: [Synth 8-567] referenced signal 'row' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:256]
+WARNING: [Synth 8-567] referenced signal 'displaycol' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:256]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:270]
+WARNING: [Synth 8-567] referenced signal 'inv' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:268]
+INFO: [Synth 8-294] found qualifier unique on case statement: implementing as parallel_case [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:353]
+WARNING: [Synth 8-567] referenced signal 'row' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:334]
+WARNING: [Synth 8-567] referenced signal 'vs' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:334]
+WARNING: [Synth 8-567] referenced signal 'clkdiv' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:334]
+WARNING: [Synth 8-567] referenced signal 'hs' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:334]
+WARNING: [Synth 8-567] referenced signal 'displaycol' should be on the sensitivity list [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:334]
+INFO: [Synth 8-6155] done synthesizing module 'vdg' (0#1) [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:24]
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/Vivado/S6847/S6847.srcs/sources_1/new/data_behaviour.sv:40]
+WARNING: [Synth 8-3848] Net display_palette in module/entity pixel_generator does not have driver. [D:/Vivado/S6847/S6847.srcs/sources_1/new/pixel_generator.sv:36]
+WARNING: [Synth 8-3848] Net bit_data in module/entity pixel_generator does not have driver. [D:/Vivado/S6847/S6847.srcs/sources_1/new/pixel_generator.sv:37]
+WARNING: [Synth 8-6014] Unused sequential element state_reg was removed.  [D:/Vivado/S6847/S6847.srcs/sources_1/new/display_state.sv:47]
+WARNING: [Synth 8-6014] Unused sequential element delta_state_reg was removed.  [D:/Vivado/S6847/S6847.srcs/sources_1/new/display_state.sv:146]
+WARNING: [Synth 8-6014] Unused sequential element clk1_reg was removed.  [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:249]
+WARNING: [Synth 8-6014] Unused sequential element clk2_reg was removed.  [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:253]
+WARNING: [Synth 8-3848] Net bit_data in module/entity vdg does not have driver. [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:72]
 WARNING: [Synth 8-3917] design vdg has port msb driven by constant 1
 WARNING: [Synth 8-3917] design vdg has port rp driven by constant 0
+WARNING: [Synth 8-7129] Port display_palette[3] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_palette[2] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_palette[1] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_palette[0] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bit_data[1] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port bit_data[0] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port vclk in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port row in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port behaviour[2] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port behaviour[1] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port behaviour[0] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mode[3] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mode[2] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mode[1] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port mode[0] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_state[2] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_state[1] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port display_state[0] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[31] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[30] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[29] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[28] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[27] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[26] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[25] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[24] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[23] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[22] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[21] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[20] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[19] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[18] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[17] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[16] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[15] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[14] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[13] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[12] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[11] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[10] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[9] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[8] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[7] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[6] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[5] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[4] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[3] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[2] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[1] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port counter[0] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port dataload in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port char_data[7] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port char_data[6] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port char_data[5] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port char_data[4] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port char_data[3] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port char_data[2] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port char_data[1] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port char_data[0] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ext_char_data[7] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ext_char_data[6] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ext_char_data[5] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ext_char_data[4] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ext_char_data[3] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ext_char_data[2] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ext_char_data[1] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port ext_char_data[0] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port semi4_data[7] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port semi4_data[6] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port semi4_data[5] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port semi4_data[4] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port semi4_data[3] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port semi4_data[2] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port semi4_data[1] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port semi4_data[0] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port semi6_data[7] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port semi6_data[6] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port semi6_data[5] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port semi6_data[4] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port semi6_data[3] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port semi6_data[2] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port semi6_data[1] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port semi6_data[0] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[7] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[6] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[5] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[4] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[3] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[2] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[1] in module pixel_generator is either unconnected or has no load
+WARNING: [Synth 8-7129] Port data[0] in module pixel_generator is either unconnected or has no load
 WARNING: [Synth 8-7129] Port clock in module palette is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1168.758 ; gain = 585.914
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1167.832 ; gain = 586.184
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1168.758 ; gain = 585.914
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1167.832 ; gain = 586.184
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 1168.758 ; gain = 585.914
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1167.832 ; gain = 586.184
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1168.758 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1167.832 ; gain = 0.000
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
@@ -329,31 +425,30 @@ INFO: [Project 1-236] Implementation specific constraints were found while readi
 Resolution: To avoid this warning, move constraints listed in [.Xil/vdg_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1259.172 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1256.113 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
 No Unisim elements were transformed.
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1259.172 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1256.113 ; gain = 0.000
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1259.172 ; gain = 676.328
+Finished Constraint Validation : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1256.113 ; gain = 674.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7a15tfgg484-3
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:18 ; elapsed = 00:00:18 . Memory (MB): peak = 1259.172 ; gain = 676.328
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1256.113 ; gain = 674.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1259.172 ; gain = 676.328
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1256.113 ; gain = 674.465
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-802] inferred FSM for state register 'new_state_reg' in module 'display_state'
-WARNING: [Synth 8-3936] Found unconnected internal register 'bit_data_reg' and it is trimmed from '3' to '2' bits. [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:184]
 WARNING: [Synth 8-327] inferring latch for variable 'bitsPerPixel_reg' [D:/Vivado/S6847/S6847.srcs/sources_1/new/palette.sv:58]
 ---------------------------------------------------------------------------------------------------
                    State |                     New Encoding |                Previous Encoding 
@@ -377,16 +472,14 @@ WARNING: [Synth 8-327] inferring latch for variable 'bitsPerPixel_reg' [D:/Vivad
                     SS17 |                            10000 |                            10000
 ---------------------------------------------------------------------------------------------------
 INFO: [Synth 8-3354] encoded FSM with state register 'new_state_reg' using encoding 'sequential' in module 'display_state'
-WARNING: [Synth 8-327] inferring latch for variable 'vcounter_reg' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:221]
-WARNING: [Synth 8-327] inferring latch for variable 'display_palette_reg' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:537]
-WARNING: [Synth 8-327] inferring latch for variable 'bit_data_reg' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:184]
-WARNING: [Synth 8-327] inferring latch for variable 'sync_high_reg' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:187]
-WARNING: [Synth 8-327] inferring latch for variable 'clkdiv_reg' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:302]
-WARNING: [Synth 8-327] inferring latch for variable 'graphic_data_reg' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:515]
-WARNING: [Synth 8-327] inferring latch for variable 'displayrow_reg' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:366]
-WARNING: [Synth 8-327] inferring latch for variable 'char_row_reg' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:148]
+WARNING: [Synth 8-327] inferring latch for variable 'vcounter_reg' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:193]
+WARNING: [Synth 8-327] inferring latch for variable 'sync_high_reg' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:141]
+WARNING: [Synth 8-327] inferring latch for variable 'ds_state_reg' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:166]
+WARNING: [Synth 8-327] inferring latch for variable 'clkdiv_reg' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:273]
+WARNING: [Synth 8-327] inferring latch for variable 'displayrow_reg' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:337]
+WARNING: [Synth 8-327] inferring latch for variable 'char_row_reg' [D:/Vivado/S6847/S6847.srcs/sources_1/new/vdg.sv:102]
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:19 ; elapsed = 00:00:19 . Memory (MB): peak = 1259.172 ; gain = 676.328
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:18 ; elapsed = 00:00:19 . Memory (MB): peak = 1256.113 ; gain = 674.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -410,33 +503,29 @@ Detailed RTL Component Info :
 +---Muxes : 
 	   2 Input   32 Bit        Muxes := 3     
 	   2 Input   16 Bit        Muxes := 2     
-	   2 Input    8 Bit        Muxes := 6     
+	   2 Input    8 Bit        Muxes := 2     
 	  10 Input    8 Bit        Muxes := 3     
-	   5 Input    8 Bit        Muxes := 3     
+	   5 Input    8 Bit        Muxes := 2     
 	   4 Input    8 Bit        Muxes := 1     
 	   5 Input    7 Bit        Muxes := 1     
-	   2 Input    7 Bit        Muxes := 1     
 	   4 Input    6 Bit        Muxes := 1     
-	   2 Input    6 Bit        Muxes := 1     
 	   8 Input    6 Bit        Muxes := 1     
 	   5 Input    5 Bit        Muxes := 1     
 	  17 Input    5 Bit        Muxes := 2     
-	   2 Input    5 Bit        Muxes := 1     
 	   4 Input    4 Bit        Muxes := 2     
-	   2 Input    4 Bit        Muxes := 3     
+	   2 Input    4 Bit        Muxes := 2     
 	   8 Input    4 Bit        Muxes := 1     
-	   2 Input    3 Bit        Muxes := 3     
+	   2 Input    3 Bit        Muxes := 9     
 	   4 Input    3 Bit        Muxes := 1     
 	  17 Input    3 Bit        Muxes := 1     
 	   3 Input    3 Bit        Muxes := 1     
-	   2 Input    2 Bit        Muxes := 2     
+	   6 Input    3 Bit        Muxes := 1     
+	   2 Input    2 Bit        Muxes := 1     
 	   3 Input    2 Bit        Muxes := 1     
-	   5 Input    2 Bit        Muxes := 1     
-	   2 Input    1 Bit        Muxes := 12    
+	   2 Input    1 Bit        Muxes := 7     
 	   4 Input    1 Bit        Muxes := 1     
 	  17 Input    1 Bit        Muxes := 5     
-	   6 Input    1 Bit        Muxes := 4     
-	   5 Input    1 Bit        Muxes := 2     
+	   6 Input    1 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -457,46 +546,41 @@ WARNING: [Synth 8-3917] design vdg has port msb driven by constant 1
 WARNING: [Synth 8-3917] design vdg has port rp driven by constant 0
 WARNING: [Synth 8-7129] Port clock in module palette is either unconnected or has no load
 WARNING: [Synth 8-3332] Sequential element (bitsPerPixel_reg[2]) is unused and will be removed from module palette.
-WARNING: [Synth 8-3332] Sequential element (display_palette_reg[3]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (ds_state_reg[2]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (ds_state_reg[1]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (ds_state_reg[0]) is unused and will be removed from module vdg.
 WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[31]) is unused and will be removed from module vdg.
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[0]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[0]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[1]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[1]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[2]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[2]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[3]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[4]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[5]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \bit_data_reg[1]  is always disabled
-WARNING: [Synth 8-264] enable of latch \bit_data_reg[1]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \bit_data_reg[0]  is always disabled
-WARNING: [Synth 8-264] enable of latch \bit_data_reg[0]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \bit_data_reg[0]  is always disabled
-WARNING: [Synth 8-264] enable of latch \bit_data_reg[0]  is always disabled
-WARNING: [Synth 8-3332] Sequential element (display_palette_reg[2]) is unused and will be removed from module vdg.
-WARNING: [Synth 8-3332] Sequential element (display_palette_reg[1]) is unused and will be removed from module vdg.
-WARNING: [Synth 8-3332] Sequential element (display_palette_reg[0]) is unused and will be removed from module vdg.
-WARNING: [Synth 8-3332] Sequential element (bit_data_reg[1]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[30]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[29]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[28]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[27]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[26]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[25]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[24]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[23]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[22]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[21]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[20]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[19]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[18]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[17]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[16]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[15]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[14]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[13]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[12]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[11]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[10]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[9]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[8]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[7]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[6]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[5]) is unused and will be removed from module vdg.
 WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[4]) is unused and will be removed from module vdg.
 WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[3]) is unused and will be removed from module vdg.
-WARNING: [Synth 8-3332] Sequential element (graphic_data_reg[5]) is unused and will be removed from module vdg.
-WARNING: [Synth 8-3332] Sequential element (graphic_data_reg[4]) is unused and will be removed from module vdg.
-WARNING: [Synth 8-3332] Sequential element (graphic_data_reg[3]) is unused and will be removed from module vdg.
-WARNING: [Synth 8-3332] Sequential element (graphic_data_reg[2]) is unused and will be removed from module vdg.
-WARNING: [Synth 8-3332] Sequential element (graphic_data_reg[1]) is unused and will be removed from module vdg.
-WARNING: [Synth 8-3332] Sequential element (graphic_data_reg[0]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[2]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[1]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (clkdiv_reg[0]) is unused and will be removed from module vdg.
 WARNING: [Synth 8-3332] Sequential element (displayrow_reg[15]) is unused and will be removed from module vdg.
 WARNING: [Synth 8-3332] Sequential element (displayrow_reg[14]) is unused and will be removed from module vdg.
 WARNING: [Synth 8-3332] Sequential element (displayrow_reg[13]) is unused and will be removed from module vdg.
@@ -513,8 +597,12 @@ WARNING: [Synth 8-3332] Sequential element (displayrow_reg[3]) is unused and wil
 WARNING: [Synth 8-3332] Sequential element (displayrow_reg[2]) is unused and will be removed from module vdg.
 WARNING: [Synth 8-3332] Sequential element (displayrow_reg[1]) is unused and will be removed from module vdg.
 WARNING: [Synth 8-3332] Sequential element (displayrow_reg[0]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (char_row_reg[3]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (char_row_reg[2]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (char_row_reg[1]) is unused and will be removed from module vdg.
+WARNING: [Synth 8-3332] Sequential element (char_row_reg[0]) is unused and will be removed from module vdg.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:25 ; elapsed = 00:00:26 . Memory (MB): peak = 1273.344 ; gain = 690.500
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:23 ; elapsed = 00:00:24 . Memory (MB): peak = 1256.113 ; gain = 674.465
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -539,38 +627,19 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1357.133 ; gain = 774.289
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1352.688 ; gain = 771.039
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \bit_data_reg[0]  is always disabled
-WARNING: [Synth 8-264] enable of latch \bit_data_reg[0]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[6]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \graphic_data_reg[7]  is always disabled
-WARNING: [Synth 8-264] enable of latch \bit_data_reg[0]  is always disabled
-WARNING: [Synth 8-264] enable of latch \bit_data_reg[0]  is always disabled
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:32 ; elapsed = 00:00:33 . Memory (MB): peak = 1357.992 ; gain = 775.148
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1353.133 ; gain = 771.484
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Technology Mapping
 ---------------------------------------------------------------------------------
-WARNING: [Synth 8-3332] Sequential element (bit_data_reg[0]) is unused and will be removed from module vdg.
-WARNING: [Synth 8-3332] Sequential element (graphic_data_reg[7]) is unused and will be removed from module vdg.
-WARNING: [Synth 8-3332] Sequential element (graphic_data_reg[6]) is unused and will be removed from module vdg.
-WARNING: [Synth 8-3332] Sequential element (char_row_reg[3]) is unused and will be removed from module vdg.
-WARNING: [Synth 8-3332] Sequential element (char_row_reg[2]) is unused and will be removed from module vdg.
-WARNING: [Synth 8-3332] Sequential element (char_row_reg[1]) is unused and will be removed from module vdg.
-WARNING: [Synth 8-3332] Sequential element (char_row_reg[0]) is unused and will be removed from module vdg.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:33 ; elapsed = 00:00:33 . Memory (MB): peak = 1386.617 ; gain = 803.773
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:31 . Memory (MB): peak = 1381.730 ; gain = 800.082
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -588,37 +657,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 1580.785 ; gain = 997.941
+Finished IO Insertion : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1578.953 ; gain = 997.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:38 ; elapsed = 00:00:38 . Memory (MB): peak = 1580.785 ; gain = 997.941
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1578.953 ; gain = 997.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1580.785 ; gain = 997.941
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1578.953 ; gain = 997.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1580.785 ; gain = 997.941
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1578.953 ; gain = 997.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1580.785 ; gain = 997.941
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1578.953 ; gain = 997.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1580.785 ; gain = 997.941
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1578.953 ; gain = 997.305
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Writing Synthesis Report
@@ -635,41 +704,41 @@ Report Cell Usage:
 |      |Cell   |Count |
 +------+-------+------+
 |1     |CARRY4 |    93|
-|2     |LUT1   |    67|
-|3     |LUT2   |    50|
+|2     |LUT1   |    62|
+|3     |LUT2   |    46|
 |4     |LUT3   |    90|
-|5     |LUT4   |    36|
-|6     |LUT5   |    77|
-|7     |LUT6   |   298|
+|5     |LUT4   |    35|
+|6     |LUT5   |    78|
+|7     |LUT6   |   308|
 |8     |FDRE   |     9|
 |9     |LD     |    19|
 |10    |IBUF   |     4|
 |11    |OBUF   |    19|
 +------+-------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1580.785 ; gain = 997.941
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:34 ; elapsed = 00:00:35 . Memory (MB): peak = 1578.953 ; gain = 997.305
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 90 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:27 ; elapsed = 00:00:37 . Memory (MB): peak = 1580.785 ; gain = 907.527
-Synthesis Optimization Complete : Time (s): cpu = 00:00:38 ; elapsed = 00:00:39 . Memory (MB): peak = 1580.785 ; gain = 997.941
+Synthesis finished with 0 errors, 0 critical warnings and 67 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:24 ; elapsed = 00:00:33 . Memory (MB): peak = 1578.953 ; gain = 909.023
+Synthesis Optimization Complete : Time (s): cpu = 00:00:34 ; elapsed = 00:00:36 . Memory (MB): peak = 1578.953 ; gain = 997.305
 INFO: [Project 1-571] Translating synthesized netlist
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1589.984 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.007 . Memory (MB): peak = 1588.094 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 112 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-138] Pushed 2 inverter(s) to 3 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.001 . Memory (MB): peak = 1593.680 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 1591.773 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 19 instances were transformed.
   LD => LDCE: 16 instances
   LD => LDCE (inverted pins: G): 3 instances
 
-Synth Design complete | Checksum: 34b73141
+Synth Design complete | Checksum: 154c00f0
 INFO: [Common 17-83] Releasing license: Synthesis
-54 Infos, 327 Warnings, 0 Critical Warnings and 0 Errors encountered.
+55 Infos, 399 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:00:43 ; elapsed = 00:00:47 . Memory (MB): peak = 1593.680 ; gain = 1202.043
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.004 . Memory (MB): peak = 1593.680 ; gain = 0.000
+synth_design: Time (s): cpu = 00:00:39 ; elapsed = 00:00:44 . Memory (MB): peak = 1591.773 ; gain = 1198.863
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1591.773 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'D:/Vivado/S6847/S6847.runs/synth_1/vdg.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file vdg_utilization_synth.rpt -pb vdg_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sun Jan 19 17:47:07 2025...
+INFO: [Common 17-206] Exiting Vivado at Wed Jan 22 20:57:13 2025...
